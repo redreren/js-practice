@@ -208,6 +208,6 @@
 // let bootcamp = 24;
 // console.log(`My name is ${myName}, I am ${age} years old, I study with bootcamp ${bootcamp}`)
 
-let a = 10;
-a = 20;
-let b = a.append + a;
+// let a = 10;
+// a = 20;
+// let b = a.append + a;
