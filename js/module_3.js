@@ -179,3 +179,36 @@
 // // console.log(name, stars, capacity);
 // console.log(status);
 // console.log(hotel);
+
+// ------------ ЗАДАЧКИ
+// const getMeEven = function () {
+//   for (const elem of arguments) {
+//     if (elem % 2 === 0) {
+//       console.log(elem);
+//     }
+//   }
+// };
+
+// getMeEven(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+//Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, что оно
+// больше нуля и меньше 10. Если это так - пусть функция возвращает true, если не так - false.
+
+// const isNumberInRange = function (n) {
+//   if (n > 0 && n < 10) {
+//     console.log(true);
+//   } else {
+//     console.log(false);
+//   }
+// };
+
+// isNumberInRange(1);
+// isNumberInRange(16);
+// isNumberInRange(-11);
+// isNumberInRange(5);
+
+// Сделайте функцию inArray, которая определяет, есть в массиве элемент с заданным текстом или нет.
+// Функция первым параметром должна принимать текст элемента, а вторым - массив, в котором делается поиск.
+// Функция должна возвращать true или false
+// var str = ‘яблоbко‘;
+// var arr = [‘банан‘, ‘яблоко‘, ‘персик’];
