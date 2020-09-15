@@ -145,3 +145,164 @@
 // fn4();
 
 // ---------------------
+
+// const hotel1 = {
+//   name: "Rixios",
+//   stars: "5",
+//   capacity: 300,
+// };
+// const hotel2 = {
+//   name: "Jazz",
+//   stars: "5",
+//   capacity: 200,
+// };
+// const hotel3 = {
+//   name: "Dnepr",
+//   stars: "2+",
+//   capacity: 5000,
+// };
+// const greeting = function (userName) {
+//   console.log(`Hello, ${userName}. Welcome to ${this.name}`);
+// };
+// greeting.call(hotel1, "Alfredo");
+// const rixiosGreeting = greeting.bind(hotel1);
+// rixiosGreeting("John");
+
+// ---------------------
+// !ПЕРЕСМОТРИ ЭТО КОГДА БУДЕШЬ ЧИТАТЬ ЭТОТ МОДУЛЬ
+
+// let obj, method;
+
+// obj = {
+//   go: function () {
+//     console.log(this);
+//   },
+// };
+// obj.go();
+
+// (obj.go)();
+
+//   (method = obj.go)();
+
+// (obj.go || obj.stop)();
+
+// console.log(obj.go || obj.stop);
+
+// ----
+
+// let ladder = {
+//   step: 0,
+//   up() {
+//     this.step++;
+//     return this;
+//   },
+//   down() {
+//     this.step--;
+//     return this;
+//   },
+//   showStep: function () {
+//     // показывает текущую ступеньку
+//     console.log(this.step);
+//     return this;
+//   },
+// };
+// // Теперь, если нам нужно сделать несколько последовательных вызовов, мы можем выполнить это так:
+// // ladder.up();
+// // ladder.up();
+// // ladder.down();
+// // ladder.showStep(); // 1
+// // Измените код методов up, down и showStep таким образом, чтобы их вызов можно было сделать по цепочке, например так:
+// ladder.up().up().up().down().showStep(); // 1
+
+// -----------
+
+const createActor = function (name) {
+  const obj = {
+    name: movies,
+  };
+  return function (movie) {
+    console.log(`${name} ${movie}`);
+    movies.push(movie);
+  };
+};
+
+const movies = [];
+
+const Brad = createActor("Brad Pit");
+Brad("jdjd");
+const Johnny = createActor("Johnny Depp");
+Johnny("Pirates of the Carribean");
+console.log(movies);
+// const list = {
+//   "Johnny Depp": ["Pirates of the Carribean", "The Tourist"],
+//   "Brad Pitt": ["Fight club", "Ocean's eleven"],
+// };
+// name = Object.keys(list);
+// movies = Object.values(list);
+
+// const createCounter = function () {
+//   /*
+//    * Локальная переменная privateValue доступна только в замыкании.
+//    * Получить к ней доступ во внешнем коде невозможно.
+//    */
+//   let privateValue = 0;
+
+//   const increment = function () {
+//     privateValue += 1;
+//     console.log(privateValue);
+//   };
+
+//   return {
+//     increment,
+//   };
+// };
+
+// const counterA = createCounter();
+
+// counterA.increment(); // 1
+// counterA.increment(); // 2
+
+// const counterB = createCounter();
+// counterB.increment(); // 1
+// counterB.increment(); // 2
+// counterB.increment(); // 3
+
+// ===================== ADDITIONAL ========================== //
+// // == task-1 == //
+// Написати метод every який приймає масив і ф-ю callback (в якій ми будемо робити різні перевірки) Цей метод повертає true якщо кожен елемент масиву пройшов перевірку з callback. Якщо хоча б один елемент не проходить перевірку то повертає false, callback приймає елемент масиву
+
+// every([1,2,3,4,5], callback) // true (перевіряємо чи елементи < 10)
+// every([2,45,67,34], callback) // false (перевіряємо чи елементи > 10)
+
+// // == task-2 == //
+// Написати метод some який приймає масив і ф-ю callback. Цей метод поверне true якщо хоча б один елемент масиву пройже перевірку з callback callback приймає елемент масиву
+
+// some([1,2,3,23,5], callback) // true (перевіряємо чи елементи > 10)
+// some([12,45,67,34], callback) // false (перевіряємо чи елементи < 10)
+// // == task-3 == //
+// Створити метод compact який приймає масив і вертає новий де відсутні будь-які значення що при переведені в bool дають false
+
+// compact([1,0,'', null, 'Hello']) // [1,'Hello']
+
+// // == task-4 == //
+// Написати ф-ю showDeliveryStatus яка приймає масив і виводить на екран інформацію про доставку товара всіх типів.
+
+// Якщо прогрес доставки 100 показувати строку "Done"
+
+// Якщо прогрес доставки < 100 показувати строку "In progress"
+
+// Якщо прогрес доставки null показувати строку "Ready for delivery"
+
+// const ordersA = [
+// { name: 'Phone', price: 12300, deliveryProgress: 50, type: 0 },
+// { name: 'Computer', price: 230000, deliveryProgress: 100, type: 1 },
+// { name: 'Tablet', price: 5000, deliveryProgress: null, type: 2 },
+// ]
+
+// const ordersB = [
+// { name: 'Phone', price: 12300, deliveryProgress: 50, type: 0 },
+// { name: 'Tablet', price: 5000, deliveryProgress: null, type: 2 },
+// ]
+
+// showDeliveryStatus(ordersA) // "In Progress", "Done", "Ready for delivery"
+// showDeliveryStatus(ordersB) // "In progress", "Not Ordered", "Ready for delivery"

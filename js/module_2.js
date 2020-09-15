@@ -281,12 +281,31 @@
 //   console.log(`${firstName} ${secondName}`);
 // }
 
+// const clients = ["Mango", "Ajax", "Poly"];
+
+// for (let i = 0; i < clients.length; i += 1) {
+//   console.log("Logging clients: ", clients[i]);
+// }
+
+// // Итерация по массиву
+// const clients = ["Mango", "Ajax", "Poly"];
+
+// for (const client of clients) {
+//   console.log(client);
+// }
+
+// // Итерация по строке
+// const string = "javascript";
+
+// for (const character of string) {
+//   console.log(character);
+// }
+
 // ===================== ADDITIONAL ========================== //
 // // == task-1 == //
 // Написати ф-ю capitalize яка буде приймати строку і буде вертати нову строку де кожне слово буде починатися з великої літери.
 
 // const capitalize = function (string) {
-//   // return string.toUpperCase();
 //   let word = string.split(" ");
 //   let arrCapitalize = [];
 //   //   console.log(word);
@@ -300,7 +319,7 @@
 // };
 // console.log(capitalize("the quick brown fox"));
 
-// capitalize('the quick brown fox') // 'The Quick Brown Fox '
+// capitalize("the quick brown fox"); // 'The Quick Brown Fox '
 
 // // == task-2 == //
 // Написати ф-ю countVowels яка буде приймати строку і буде вертати кількість голосних літер. aeiouAEIOU - рядок з голосними в англ алфавіті
@@ -328,16 +347,48 @@
 // countVowels('the quick brown fox') // 5
 
 // // == task-3 == //
-// Написати ф-ю яка приймає 2 параметра (розміри в ремах - "2rem) і велечину базового шрифта ("20px") і вертає конвертований розмір в пікселях
+// Написати ф-ю яка приймає 2 параметра (розміри в ремах - "2rem)
+// і велечину базового шрифта("20px") і вертає конвертований розмір в пікселях
 
 // // == task-4 == //
 // Написати ф-ю що приймає число (температура в цельсіях) і виводить результат в фаренгейтах
 
+// const convertCelsiusToFahrenheit = function (celsius) {
+//     const fahrenheit = Math.round(celsius * 1.8 + 32);
+//     return fahrenheit;
+// }
+// console.log(convertCelsiusToFahrenheit(21));
+
 // // == task-5 == //
-// Написати ф-ю calculateDogAge яка приймає один параметр - вік собачки. Результатом її роботи буде вік перевединий на людський (1 рік собаки це 7 років в людини)
+// Написати ф-ю calculateDogAge яка приймає один параметр - вік собачки. 
+// Результатом її роботи буде вік перевединий на людський (1 рік собаки це 7 років в людини)
+
+// const calculateDogAge = function (dogAge) {
+//     const humanYears = dogAge * 7;
+//     return humanYears;
+// }
+// console.log(calculateDogAge(5));
 
 // // == task-6 == //
 // Написати ф-ю rgbToHex яка приймає колір в форматі rgb і повертає колір в форматі hex
+
+// const rgbToHex = function (r, g, b) { 
+//     let h = Number(r).toString(16);
+//     let e = Number(g).toString(16);
+//     let x = Number(b).toString(16);
+//     // console.log(hex);
+//     if (h.length < 2) {
+//          h = "0" + h;
+//     }
+//     if (e.length < 2) {
+//         e = "0" + e;
+//     }
+//     if (x.length < 2) {
+//         x = "0" + x;
+//     }
+//     return `#${h}${e}${x}`;
+//   };
+//   console.log(rgbToHex(0, 0, 0));
 
 // // == task-7 == //
 // Написати ф-ю яка приймає масив і видаляє звідти всі унікальні елементи
@@ -350,3 +401,161 @@
 // Написати ф-ю median яка приймає масив і знаходить його медіану Медіана – це числове значення, яке ділить відсортований масив чисел на більшу і меншу половини. У відсортованому масиві з непарним числом елементів медіана – це число в середині масиву. Для масиву з парним числом елементів, де нема ні одного елемента точно посередині, медіана – це середнє значення двох чисел, які знаходяться в середині масиву. В цій задачі заданий непустий масив натуральних чисел. Вам потрібно знайти медіану даного масиву.
 // median([1, 2, 3, 4, 5]) // 3
 // median([3, 6, 10, 15, 20, 99]) // 12.5
+
+//-------------------
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// for (let i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
+// }
+// const findInArray = function (array, elem) {
+//   for (let element of array) {
+//     console.log(element);
+//     if (elem === element) {
+//       return true;
+//     }
+//   }
+//   return false;
+// };
+// console.log(findInArray(arr, 100));
+
+// -----------------
+
+// const showThis = function(a, b) {
+//     const show = function() {
+//         console.log(this.a, this.b)
+//     }
+// }
+
+// const user = {
+//     name: "lika",
+//     age: 20,
+//     getKey() {
+//         console.log(this.name, this.age)
+//     }
+// }
+// user.getKey();
+
+// ------------------
+
+// let i = 0;
+// let j = 0;
+// // Желаемое количество строк
+// let lines = 5;
+// let space = "";
+// let star = "";
+
+// while (i < lines) {
+//     space = "";
+//     star = "";
+//     // for (j = 0; j < lines - i; j++) space += " ";
+//     for (j = 0; j < 2 * i + 1; j++) star += "*";
+//     console.log(space + star);
+//     i++;
+// }
+
+// -------------
+
+// *****
+// *****
+// *****
+// *****
+// *****
+
+// let lines = 5;
+
+// for (let i = 0; i < lines; i++) {
+//     let star = "";
+//     for (let j = 0; j < lines; j++) star += "*";
+//     console.log(star);
+//     console.log('\n')
+// }
+
+// --------------
+
+// *****
+// ****
+// ***
+// **
+// *
+
+// let lines = 5;
+
+// for(let i = 0; i < lines; i++) {
+//     let star = "";
+//     for(let j = 0; j < lines - i; j++){
+//         star += "*";
+//     }
+//     console.log(star);
+// }
+
+// --------------
+
+// *****
+//  ****
+//   ***
+//    **
+//     *
+
+// let lines = 5;
+
+
+// for(let i = 0; i < lines; i++) {
+//     let star = "";
+//     let space = "";
+//     for(let j = 0; j < i; j++) {
+//         space += " ";
+//     }
+//     for(let j = 0; j < lines - i; j++) {
+//         star += "*";
+//     }
+//     console.log(`${space}${star}`)
+// }
+
+// -------------
+
+// *
+// **
+// ***
+// ****
+// *****
+
+// let lines = 5;
+
+// for (let i = 0; i < lines; i++) {
+//     let star = "";
+//     for (let j = 0; j < i + 1; j++) star += "*";
+//     console.log(star);
+// }
+
+//  ----------------
+
+//     *
+//    **
+//   ***
+//  ****
+// *****
+
+// let lines = 5;
+
+// for(let i = 0; i < lines; i++) {
+//     let star = "";
+//     let space = "";
+//     for(let j = 0; j < lines - i - 1; j++) {
+//         space += " ";
+//     }
+//     for(let j = 0; j < i + 1; j++) {
+//         star += "*";
+//     }
+//     console.log(`${space}${star}`)
+// }
+
+// -------------
+
+// MULTIPLYING
+
+// for (let i = 1; i < 10; i++) {
+//     let result = i * i;
+//     console.log(`${i} * ${i} = ${result}`)
+// }
