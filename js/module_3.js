@@ -217,9 +217,28 @@
 // // == task-1 == //
 // Написати ф-ю яка приймає в себе 2 параметра (обєкт замовлення і обєкт з цінами товару) 
 // Ця ф-я має повернути ціну замовлення
-// const productsPrice = { apple: 20, orange: 5, cheese: 12, pork: 45, bread: 23 } 
-// const orderA = { apple: 5, cheese: 1, bread: 3 } 
-// const orderB = { orange: 10, pork: 2, bread: 1 }
+
+// const productsPrice = { apple: 20, orange: 5, cheese: 12, pork: 45, bread: 23 };
+// const orderA = { apple: 5, cheese: 1, bread: 3 }; 
+// const orderB = { orange: 10, pork: 2, bread: 1 };
+
+// const countTotalPrice = function(order, price) {
+//     console.log(order, price)
+//     let totalPrice = 0;
+//     // const products = 
+//     // for(const product in price){
+//     //     console.log(product);
+//     //     for(const orderedProduct in order){
+//     //         console.log(orderedProduct);
+//     //         if(product === orderedProduct){
+                
+//     //         }
+//     //     }
+//     // }
+// }
+
+// console.log(countTotalPrice(orderA, productsPrice));
+// console.log(countTotalPrice(orderB, productsPrice));
 
 // // == task-2 == //
 // Написати ф-ю isObjectEmpty яка перевіряє чи обєкт пустий чи ні. Якщо обєкт пустий то повернути true інакше false

@@ -216,23 +216,23 @@
 
 // -----------
 
-const createActor = function (name) {
-  const obj = {
-    name: movies,
-  };
-  return function (movie) {
-    console.log(`${name} ${movie}`);
-    movies.push(movie);
-  };
-};
+// const createActor = function (name) {
+//   const obj = {
+//     name: movies,
+//   };
+//   return function (movie) {
+//     console.log(`${name} ${movie}`);
+//     movies.push(movie);
+//   };
+// };
 
-const movies = [];
+// const movies = [];
 
-const Brad = createActor("Brad Pit");
-Brad("jdjd");
-const Johnny = createActor("Johnny Depp");
-Johnny("Pirates of the Carribean");
-console.log(movies);
+// const Brad = createActor("Brad Pit");
+// Brad("jdjd");
+// const Johnny = createActor("Johnny Depp");
+// Johnny("Pirates of the Carribean");
+// console.log(movies);
 // const list = {
 //   "Johnny Depp": ["Pirates of the Carribean", "The Tourist"],
 //   "Brad Pitt": ["Fight club", "Ocean's eleven"],
@@ -269,23 +269,42 @@ console.log(movies);
 
 // ===================== ADDITIONAL ========================== //
 // // == task-1 == //
-// Написати метод every який приймає масив і ф-ю callback (в якій ми будемо робити різні перевірки) Цей метод повертає true якщо кожен елемент масиву пройшов перевірку з callback. Якщо хоча б один елемент не проходить перевірку то повертає false, callback приймає елемент масиву
+// Написати метод every який приймає масив і ф-ю callback (в якій ми будемо робити різні перевірки) 
+// Цей метод повертає true якщо кожен елемент масиву пройшов перевірку з callback. 
+// Якщо хоча б один елемент не проходить перевірку то повертає false, callback приймає елемент масиву
+
+// const every = function(array, callback){
+
+//     for (const elem of array){
+//         return callback(elem);
+//     }
+
+// }
+
+// every([1,2,3,4,5], elem => elem < 10);
+// console.log(every([1,2,3,4,5], elem => elem < 10)); // true (перевіряємо чи елементи < 10)
+// every([2,45,67,34], elem => elem > 10);
+// console.log(every([2,45,67,34], elem => elem > 10));// false (перевіряємо чи елементи > 10)
 
 // every([1,2,3,4,5], callback) // true (перевіряємо чи елементи < 10)
 // every([2,45,67,34], callback) // false (перевіряємо чи елементи > 10)
 
 // // == task-2 == //
-// Написати метод some який приймає масив і ф-ю callback. Цей метод поверне true якщо хоча б один елемент масиву пройже перевірку з callback callback приймає елемент масиву
+// Написати метод some який приймає масив і ф-ю callback. Цей метод поверне true якщо хоча б один 
+// елемент масиву пройже перевірку з callback callback приймає елемент масиву
 
 // some([1,2,3,23,5], callback) // true (перевіряємо чи елементи > 10)
 // some([12,45,67,34], callback) // false (перевіряємо чи елементи < 10)
+
 // // == task-3 == //
-// Створити метод compact який приймає масив і вертає новий де відсутні будь-які значення що при переведені в bool дають false
+// Створити метод compact який приймає масив і вертає новий де відсутні будь-які значення що при 
+// переведені в bool дають false
 
 // compact([1,0,'', null, 'Hello']) // [1,'Hello']
 
 // // == task-4 == //
-// Написати ф-ю showDeliveryStatus яка приймає масив і виводить на екран інформацію про доставку товара всіх типів.
+// Написати ф-ю showDeliveryStatus яка приймає масив і виводить на екран інформацію про доставку 
+// товара всіх типів.
 
 // Якщо прогрес доставки 100 показувати строку "Done"
 
@@ -306,3 +325,69 @@ console.log(movies);
 
 // showDeliveryStatus(ordersA) // "In Progress", "Done", "Ready for delivery"
 // showDeliveryStatus(ordersB) // "In progress", "Not Ordered", "Ready for delivery"
+
+// =================
+
+// Расставь отсутствующие this в методах объекта account.
+
+// const account = {
+//   owner: 'Mango',
+//   balance: 24000,
+//   discount: 0.1,
+//   orders: ['order-1', 'order-2', 'order-3'],
+//   changeDiscount(value) {
+//     this.discount = value;
+//   },
+//   showOrders() {
+//     return this.orders;
+//   },
+//   addOrder(cost, order) {
+//     this.balance -= cost;
+//     this.orders.push(order);
+//   },
+// };
+
+// account.changeDiscount(0.15);
+// console.log(account.discount); // 0.15
+
+// console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3']
+
+// account.addOrder(5000, 'order-4');
+// console.log(account.balance); // 19000
+// console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3', 'order-4']
+
+// -----------------------
+
+// Задание 2
+// Исправь ошибки которые будут в консоли, чтобы скрипт заработал.
+
+// const inventory = {
+//   items: ['Knife', 'Gas mask'],
+//   add(itemName) {
+//     console.log(`Adding ${itemName} to inventory`);
+
+//     this.items.push(itemName);
+//   },
+//   remove(itemName) {
+//     console.log(`Removing ${itemName} from inventory`);
+
+//     this.items = this.items.filter(item => item !== itemName);
+//   },
+// };
+
+// const invokeInventoryAction = function(itemName, action) {
+//   console.log(`Invoking action on ${itemName}`);
+//   action(itemName);
+// };
+
+// invokeInventoryAction('Medkit', inventory.add.bind(inventory));
+// // Invoking action on Medkit
+// // Adding Medkit to inventory
+
+// console.log(inventory.items); // ['Knife', 'Gas mask', 'Medkit']
+
+// invokeInventoryAction('Gas mask', inventory.remove.bind(inventory));
+// // Invoking action on Gas mask
+// // Removing Gas mask from inventory
+
+// console.log(inventory.items); // ['Knife', 'Medkit']
